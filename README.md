@@ -1,5 +1,11 @@
 #  MechanicShop Workshop
 
+![.NET 10](https://img.shields.io/badge/.NET-10-512BD4?style=for-the-badge&logo=.net)
+![C#](https://img.shields.io/badge/C%23-Language-239120?style=for-the-badge&logo=csharp)
+![Blazor](https://img.shields.io/badge/Blazor-WebAssembly-512BD4?style=for-the-badge&logo=blazor)
+![SQL Server](https://img.shields.io/badge/Database-SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server)
+![Clean Architecture](https://img.shields.io/badge/Architecture-Clean-blue?style=for-the-badge)
+
 A professional, full-stack **Mechanic Shop Management System** built with **.NET 10** and **Blazor**, following **Clean Architecture**, **CQRS**, and **Domain-Driven Design** principles. The system manages work orders, customers, repair tasks, scheduling, billing, and identity. designed to reflect real-world, production-grade software engineering practices.
 
 ---
@@ -142,6 +148,62 @@ The solution is structured around **Clean Architecture**, ensuring a clear separ
 
 ### Background Services
 - Automated cleanup of overdue bookings via a hosted background job
+
+---
+
+##  API Endpoints
+
+### Customers
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/customers` | Get paginated list of customers |
+| `GET` | `/api/customers/{id}` | Get customer by ID |
+| `POST` | `/api/customers` | Create a new customer |
+| `PUT` | `/api/customers/{id}` | Update a customer |
+| `DELETE` | `/api/customers/{id}` | Remove a customer |
+
+### Work Orders
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/workorders` | Get filtered/paginated work orders |
+| `GET` | `/api/workorders/{id}` | Get work order by ID |
+| `POST` | `/api/workorders` | Create a new work order |
+| `PUT` | `/api/workorders/{id}/state` | Update work order state |
+| `PUT` | `/api/workorders/{id}/relocate` | Relocate a work order slot |
+| `PUT` | `/api/workorders/{id}/repair-tasks` | Update repair tasks on a work order |
+| `PUT` | `/api/workorders/{id}/labor` | Assign labor to a work order |
+| `DELETE` | `/api/workorders/{id}` | Delete a work order |
+
+### Repair Tasks
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/repairtasks` | Get all repair tasks |
+| `GET` | `/api/repairtasks/{id}` | Get repair task by ID |
+| `POST` | `/api/repairtasks` | Create a repair task |
+| `PUT` | `/api/repairtasks/{id}` | Update a repair task |
+| `DELETE` | `/api/repairtasks/{id}` | Remove a repair task |
+
+### Billing
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/invoices/{id}` | Get invoice by ID |
+| `GET` | `/api/invoices/{id}/pdf` | Download invoice as PDF |
+| `POST` | `/api/invoices` | Issue an invoice |
+| `PUT` | `/api/invoices/{id}/settle` | Settle (pay) an invoice |
+
+### Identity
+| Method | Endpoint | Description |
+|---|---|---|
+| `POST` | `/api/identity/token` | Generate JWT access + refresh tokens |
+| `POST` | `/api/identity/refresh` | Refresh access token |
+| `GET` | `/api/identity/me` | Get current user info |
+
+### Dashboard & Settings
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/dashboard/stats` | Get today's work order statistics |
+| `GET` | `/api/settings` | Get application settings |
+
 ---
 
 ##  Getting Started
@@ -233,3 +295,7 @@ This project is built to reflect professional, production-grade engineering stan
 - **OpenAPI / Swagger** — API is fully documented with bearer security scheme and version info transformers
 - **CI/CD** — GitHub Actions workflow (`build-and-test.yml`) automates build and test on every push
 - **Docker Support** — Containerized deployment with `Dockerfile` and `docker-compose.yml`
+
+---
+
+Built with ❤️
