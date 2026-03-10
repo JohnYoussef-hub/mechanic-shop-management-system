@@ -13,7 +13,7 @@ A professional, full-stack **Mechanic Shop Management System** built with **.NET
 ##  Table of Contents
 
 - [Project Overview](#project-overview)
-- [Architecture & Patterns](#architecture-patterns)
+- [Architecture & Patterns](#architecture--patterns)
 - [Tech Stack](#tech-stack)
 - [Key Features](#key-features)
 - [API Endpoints](#api-endpoints)
